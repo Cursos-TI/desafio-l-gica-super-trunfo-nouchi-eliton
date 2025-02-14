@@ -150,12 +150,45 @@ int main() {
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-    char cidade_vencedora[20];
-    if (super_poder > super_poder2){
-        printf("A cidade vencedora é a %s\n", nome_cidade);
-    }else{
-        printf("A cidade vencedora é a %s\n", nome_cidade2);
-    }      
+
+    int opcao;
+    printf("Escolha o numero de um dos atributos abaixo para comparacao:\n");
+    printf("1. Populacao\n");
+    printf("2. Area\n");
+    printf("3. PIB\n");
+    printf("4. Quantidade de pontos turisticos\n");
+    scanf("%d", &opcao);
+    switch(opcao){
+        case 1:
+            if (populacao > populacao2){
+                printf("A cidade vencedora é a %s\n", nome_cidade);
+            }else{
+                printf("A cidade vencedora é a %s\n", nome_cidade2);
+            }  
+            break;
+        case 2:
+            if (area > area2){
+                printf("A cidade vencedora é a %s\n", nome_cidade);
+            }else{
+                printf("A cidade vencedora é a %s\n", nome_cidade2);
+            }  
+            break;
+        case 3:
+            if (pib > pib2){
+                printf("A cidade vencedora é a %s\n", nome_cidade);
+            }else{
+                printf("A cidade vencedora é a %s\n", nome_cidade2);
+            }
+            break;
+        case 4:
+            if (qnt_pontos_turisticos > qnt_pontos_turisticos2){
+                printf("A cidade vencedora é a %s\n", nome_cidade);
+            }else{
+                printf("A cidade vencedora é a %s\n", nome_cidade2);
+            }
+            break;
+
+    }
 
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
