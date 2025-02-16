@@ -152,43 +152,42 @@ int main() {
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
 
     int opcao;
-    printf("Escolha o numero de um dos atributos abaixo para comparacao:\n");
-    printf("1. Populacao\n");
-    printf("2. Area\n");
-    printf("3. PIB\n");
-    printf("4. Quantidade de pontos turisticos\n");
-    scanf("%d", &opcao);
-    switch(opcao){
-        case 1:
-            if (populacao > populacao2){
-                printf("A cidade vencedora é a %s\n", nome_cidade);
-            }else{
-                printf("A cidade vencedora é a %s\n", nome_cidade2);
-            }  
-            break;
-        case 2:
-            if (area > area2){
-                printf("A cidade vencedora é a %s\n", nome_cidade);
-            }else{
-                printf("A cidade vencedora é a %s\n", nome_cidade2);
-            }  
-            break;
-        case 3:
-            if (pib > pib2){
-                printf("A cidade vencedora é a %s\n", nome_cidade);
-            }else{
-                printf("A cidade vencedora é a %s\n", nome_cidade2);
-            }
-            break;
-        case 4:
-            if (qnt_pontos_turisticos > qnt_pontos_turisticos2){
-                printf("A cidade vencedora é a %s\n", nome_cidade);
-            }else{
-                printf("A cidade vencedora é a %s\n", nome_cidade2);
-            }
-            break;
+    int soma1=0, soma2=0;
+    for (int i=0; i<2; i++){
+        printf("Escolha o numero de um atributo para comparacao:\n");
+        printf("1. Populacao\n");
+        printf("2. Area\n");
+        printf("3. PIB\n");
+        printf("4. Quantidade de pontos turisticos\n");
+        scanf("%d", &opcao);
+        switch(opcao){
+            case 1:
+                soma1 += populacao;
+                soma2 += populacao2;
+                break;
+            case 2:
+                soma1 += area;
+                soma2 += area2;
+                break;
+            case 3:
+                soma1 +=pib;
+                soma2 +=pib2;
+                break;
+            case 4:
+                soma1 += qnt_pontos_turisticos;
+                soma2 += qnt_pontos_turisticos2;
+                break;
+            default:
+                printf("Opcao invalida!");
 
+        }
     }
+    if (soma1 > soma2){
+        printf("Cidade vencedora: %s", nome_cidade);
+    }else{
+        printf("Cidade vencedora: %s", nome_cidade2);
+    }
+    
 
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
